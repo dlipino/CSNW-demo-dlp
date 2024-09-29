@@ -1,5 +1,5 @@
-import { ChangeEvent, useRef, useState } from "react";
-import React from "react";
+import { ChangeEvent, useRef } from "react";
+
 
 import { useBoggle } from '../../context/BoggleContext';
 export function SimpleFileInput() {
@@ -18,12 +18,33 @@ export function SimpleFileInput() {
     fileInputRef.current?.click();
   };
 
+
+  // function readFile() {
+  //   const fileReader = new FileReader();
+  //   const resultContainer = document.getElementById("result");
+  //   const file = document.querySelector("input[type=file]").files[0];
+  
+  //   if (file) {
+  //     fileReader.readAsText(file); // Read the file so fileReader.result is populated.
+  //   }
+  
+  //   fileReader.addEventListener(
+  //     "load",
+  //     () => {
+  //       resultContainer.textContent = fileReader.result;
+  //     },
+  //     { once: true }
+  //   );
+  // }
+  
   const loadLettersJson = (event: ChangeEvent<HTMLInputElement>) => {
     console.log("Starting the load")
     if (event.target.files && event.target.files[0]) {
       const file = event.target.files[0];
       console.log("Trying to read", file)
       const reader = new FileReader();
+
+      
       //TODO add error handling and messages for incorrect file format etc
       reader.onload = function fileReadCompleted() {
         // when the reader is done, the content is in reader.result.

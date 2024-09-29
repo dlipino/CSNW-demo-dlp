@@ -24,12 +24,6 @@ const BoggleMain = () => {
     console.log(JSON.stringify(tileDict, null, 4));
     updateLetters(flatLetters)
   };
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const handleImageUploadClick = () => {
-    console.log("Tring to load")
-    fileInputRef.current?.click();
-  };
 
   return (
    
