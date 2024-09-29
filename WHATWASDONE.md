@@ -1,0 +1,69 @@
+Ctrl+Shift+P
+Preference Color Scheme
+
+https://github.com/nvm-sh/nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+https://dev.to/this-is-learning/file-nesting-in-vs-code-46l5
+
+What I did for interview part 2:
+Read the problems.
+went to reference webpages, can't decided what to do 
+
+looked up solutions to boggle and poker in typescript/react
+hoped to find cool algo for findinASWSg non repeating adjacent elements in 2d array
+looked for images of cards
+looked at all the react stuff and realized i have no clue what im doing
+
+got skeleton node.js project
+ran it
+
+searched for Fullstack React & Node.js + TypeScript to get all projects into one git repo
+Given a 4x4 matrix of letters chosen randomly from A-Z (with replacement, so a given letter may be used more than once), and a list L of english words (you can use any word list you’d like); write a program to output all the words present in the matrix per the rules of Boggle. Your program should be able to accept pre-set 4x4 matrices and word lists in a reasonable (text-based) format of your choosing. Rules of Boggle for your reference. 
+
+
+
+
+https://kyleclapper.dev/boggle/
+https://github.com/ibnumusyaffa/node-ts-esm-starter-minimal
+https://leejjon.medium.com/sharing-code-between-frontend-and-backend-in-a-full-stack-typescript-app-1c8711c40304
+https://medium.com/@vishalchouhan2012/building-full-stack-applications-with-typescript-node-js-and-react-js-32104310b244
+https://github.com/sds/boggle-solver/blob/master/js/boggle.js
+https://medium.com/@ashalabi13/solving-boggle-using-depth-first-searches-and-prefix-trees-9c3faa89ea99
+https://www.geeksforgeeks.org/boggle-using-trie/
+https://www.robinwieruch.de/react-starter/
+https://github.com/jonluca/vite-typescript-ssr-react
+https://www.freecodecamp.org/news/use-typescript-with-react/
+https://danielnagy.me/posts/Post_usaivhdu3j5d
+https://dev.to/janoskocs/setting-up-a-react-project-using-vite-typescript-vitest-2gl2
+https://medium.com/@nedopaka/setup-a-react-vite-project-with-typescript-prettier-vitest-2024-9bb6e919ac8f
+https://www.geeksforgeeks.org/how-to-redirect-in-react-with-typescript/
+https://www.geeksforgeeks.org/how-to-setup-reactjs-with-vite/
+https://www.geeksforgeeks.org/8-ways-to-style-react-components/
+https://blog.logrocket.com/how-to-use-typescript-react-tutorial-examples/
+https://leandroaps.medium.com/building-a-modern-react-app-with-vite-vitest-typescript-eslint-prettier-and-husky-abc7a9876e9d
+https://medium.com/@msgold/creating-a-simple-client-side-data-grid-in-react-and-typescript-e631e14fb815
+https://codesandbox.io/p/sandbox/typescript-react-canvas-hex-grid-f4yj5?file=%2Fsrc%2Fcomponents%2FCanvas%2Fdraw.utils.ts
+https://medium.com/@ademyalcin27/building-a-stylish-tic-tac-toe-game-with-react-typescript-and-tailwind-css-f95cf06983e1
+https://www.squash.io/passing-parameters-to-components-in-reactjs-with-typescript/
+
+
+boggle: two multiple paths same word
+
+
+npm init -y
+npm install typescript ts-node @types/node --save-dev
+npx tsc --init
+
+npm init -y
+npm install express cors class-transformer class-validator
+npm install @types/express @types/cors @types/node typescript ts-loader ts-node webpack webpack-cli webpack-node-externals copy-webpack-plugin -D
+
+ 
+npm install @types/class-validator @types/cors @types/node @types/express -D
+
+https://dev.to/janoskocs/setting-up-a-react-project-using-vite-typescript-vitest-2gl2
+Vite React:
+npm create vite dlp-sample
+- react -> typescript
+npm install -D vitest
+npm install -D @testing-library/react @testing-library/jest-dom jsdom

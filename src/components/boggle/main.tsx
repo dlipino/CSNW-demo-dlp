@@ -1,15 +1,18 @@
-//First.tsx
-
 import { Link } from 'react-router-dom';
+
+import Board from "./board";
 
 function BoggleMain() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>First components</p>
 
-        <Link to="/">go back</Link>
+    <div>
+      <header >
+        <p>To </p>
+        <Link to="/">Home</Link>
       </header>
+      <div className="h-screen flex items-center justify-center bg-gray-100">
+        <Board />
+      </div>
     </div>
   );
 }

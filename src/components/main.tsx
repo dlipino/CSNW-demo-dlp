@@ -9,10 +9,8 @@ function Main() {
   const navigate = useNavigate();
 
   const goToBoggle = () => {
-
-    // This will navigate to second component
     navigate('/boggle');
-};
+  };
   return (
     <>
       <div>
