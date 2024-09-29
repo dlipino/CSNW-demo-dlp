@@ -1,5 +1,7 @@
 Ctrl+Shift+P
 Preference Color Scheme
+settings, prefernce tab
+webbrowser ctrl+shift+c then click
 
 https://github.com/nvm-sh/nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
