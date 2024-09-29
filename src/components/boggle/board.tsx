@@ -16,7 +16,6 @@ const Board = () => {
     // setSquares(newSquares);
     // setIsXNext(!isXNext);
   };
-  const t =Array(4).fill("a")
   const renderTile = (index: number) => {
     return <Tile key={index} value={tiles[index]} onClick={() => handleClick(index)} />;
   };

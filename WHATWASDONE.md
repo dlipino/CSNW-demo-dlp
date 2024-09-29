@@ -47,7 +47,10 @@ https://medium.com/@msgold/creating-a-simple-client-side-data-grid-in-react-and-
 https://codesandbox.io/p/sandbox/typescript-react-canvas-hex-grid-f4yj5?file=%2Fsrc%2Fcomponents%2FCanvas%2Fdraw.utils.ts
 https://medium.com/@ademyalcin27/building-a-stylish-tic-tac-toe-game-with-react-typescript-and-tailwind-css-f95cf06983e1
 https://www.squash.io/passing-parameters-to-components-in-reactjs-with-typescript/
-
+https://stackoverflow.com/questions/77217290/best-way-to-use-react-context-with-usestate-in-typescript
+https://medium.com/@aren.talb00/what-is-context-api-in-react-how-use-it-5360fc36da91
+https://plainenglish.io/blog/how-to-use-react-fc-children-prop-in-react-18-with-typescript-6ab7b2c901ce
+https://blog.logrocket.com/how-to-use-react-context-typescript/
 
 boggle: two multiple paths same word
 
