@@ -67,3 +67,6 @@ npm create vite dlp-sample
 - react -> typescript
 npm install -D vitest
 npm install -D @testing-library/react @testing-library/jest-dom jsdom
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
