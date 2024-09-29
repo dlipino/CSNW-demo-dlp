@@ -2,17 +2,43 @@ import React, { PropsWithChildren } from 'react';
 import { createContext, useContext, useState, ReactNode} from 'react';
 
 interface BoggleContextType {
-  letters: string[] | null; //Array of chars with length 4x4 
+  letters: string[]; //Array of chars with length 4x4 or 0
   solvedWords: string[] | null; //Array of all solutions
+  updateLetters: (letters: string[] | null) => void;
+  updateSolvedWords: (solvedWords: string[] | null) => void;
 }
 const BoggleContext = createContext<BoggleContextType | null>(null);
 
 // const BoggleProvider: React.FC<PropsWithChildren> = ({ children }) => {
 const BoggleProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
-  const [letters, setLetters] = useState<string[] | null>(null);
+  const [letters, setLetters] = useState<string[]>(Array(16).fill(null));
   const [solvedWords, setSolvedWords] = useState<string[] | null>(null);
-  return <BoggleContext.Provider value={{ letters, solvedWords }}>{children}</BoggleContext.Provider>;
+
+
+  function updateLetters(letters: string[] | null) {
+    if (letters === null) {
+      setLetters(Array(16).fill(null))
+      return;
+    }
+    //TODO Check to verify correct size, for now assume it works
+    setLetters(letters)
+  }
+
+  function updateSolvedWords(solvedWords: string[] | null) {
+    setSolvedWords(solvedWords)
+  }
+
+  return <BoggleContext.Provider value={{ letters, solvedWords, updateLetters, updateSolvedWords}}>{children}</BoggleContext.Provider>;
 };
+
+function useBoggle() : BoggleContextType {
+  const context = useContext(BoggleContext);
+  if (context === undefined)
+    throw new Error("BoggleContext is used outside of BoggleProvider");
+  return context as BoggleContextType;
+}
+
+export { BoggleProvider, useBoggle, BoggleContext };
 
 // import React, { PropsWithChildren, useCallback, useContext, useState, createContext, ReactNode } from 'react';
 
