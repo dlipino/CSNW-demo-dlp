@@ -51,6 +51,11 @@ https://stackoverflow.com/questions/77217290/best-way-to-use-react-context-with-
 https://medium.com/@aren.talb00/what-is-context-api-in-react-how-use-it-5360fc36da91
 https://plainenglish.io/blog/how-to-use-react-fc-children-prop-in-react-18-with-typescript-6ab7b2c901ce
 https://blog.logrocket.com/how-to-use-react-context-typescript/
+https://medium.com/@aren.talb00/creating-a-custom-file-input-using-react-and-useref-233f5d4abfc9
+https://dev.to/g33konaut/reading-local-files-with-javascript-25hn
+https://dev.to/yanhaijing/mastering-javascript-multiple-ways-to-generate-a-two-dimensional-array-cpg
+https://medium.com/@jijun.tang.data/parse-json-object-with-variables-in-typescript-211007293456 
+
 
 boggle: two multiple paths same word
 

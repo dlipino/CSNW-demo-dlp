@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { createContext, useContext, useState } from 'react';
+import { useRef } from "react";
 import Board from "./board";
 import { useBoggle } from '../../context/BoggleContext';
-
+import { SimpleFileInput } from './fileinput';
 
 
 const BoggleMain = () => {
@@ -17,13 +17,19 @@ const BoggleMain = () => {
     console.log("Getting new")
     const w = 4;
     const h = 4;
-    let letterSource = Array.from({length: w*h}, () => selectRandomLetter());
-    console.log(letterSource)
-    updateLetters(letterSource)
-    // setSquares(Array(9).fill(null));
-    // setIsXNext(true);
+    // const letterSource = Array.from({length: w*h}, () => selectRandomLetter());
+    const letterSource =Array.from({ length: w }, () => Array.from({ length: h }, () => selectRandomLetter()));
+    const flatLetters =  letterSource.flat();
+    const tileDict = {"letters": letterSource}
+    console.log(JSON.stringify(tileDict, null, 4));
+    updateLetters(flatLetters)
   };
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
+  const handleImageUploadClick = () => {
+    console.log("Tring to load")
+    fileInputRef.current?.click();
+  };
 
   return (
    
@@ -38,6 +44,7 @@ const BoggleMain = () => {
         >
           Restart
         </button>
+        <SimpleFileInput/>
         <div className="h-screen flex items-center justify-center bg-gray-100">
           <Board />
         </div>
