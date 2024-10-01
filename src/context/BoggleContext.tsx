@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from 'react';
 
 interface BoggleContextType {
   letters: (string | null )[][]; //Array of chars with length 4x4 or 0
-  solvedWords: string[]; //Array of all solutions
+  solvedWords: string[] | null; //Array of all solutions
   validWords: string[]
   updateLetters: (letters: string[][]) => void;
   updateSolvedWords: (solvedWords: string[] | null) => void;
@@ -16,7 +16,7 @@ const BoggleProvider: React.FC<{children: React.ReactNode}> = ({ children }) => 
   const w = 4;
   const h = 4;
   const [letters, setLetters] = useState<(string|null)[][]>(Array.from({ length: w }, () => Array.from({ length: h }, () => null)));
-  const [solvedWords, setSolvedWords] = useState<string[]>([]);
+  const [solvedWords, setSolvedWords] = useState<string[] | null>(null);
   const [validWords, setValidWords] = useState<string[]>([])
 
   function updateLetters(inputTiles: string[][]) {
@@ -29,16 +29,14 @@ const BoggleProvider: React.FC<{children: React.ReactNode}> = ({ children }) => 
       }
       //TODO check for correct letter type, probably
     }
-    setLetters(inputTiles)
+    setLetters(inputTiles);
+    setSolvedWords(null);
   }
 
   function updateSolvedWords(solvedWords: string[] | null) {
-    if (solvedWords === null) {
-      setSolvedWords([])
-    } else {
-      setSolvedWords(solvedWords)
-    }
+    setSolvedWords(solvedWords)
   }
+  
   function updateValidWords(validWords: string[]) {
     setValidWords(validWords)
   }

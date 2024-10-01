@@ -61,12 +61,13 @@ React initial:
 - https://www.freecodecamp.org/news/use-typescript-with-react/
 - https://danielnagy.me/posts/Post_usaivhdu3j5d
 - https://dev.to/janoskocs/setting-up-a-react-project-using-vite-typescript-vitest-2gl2
-- https://medium.com/@nedopaka/setup-a-react-vite-project-with-typescript-prettier-vitest-2024-9bb6e919ac8f
+- https://medium.com/@nedopaka/-setup-a-react-vite-project-with-typescript-prettier-vitest-2024-9bb6e919ac8f
 - https://www.geeksforgeeks.org/how-to-redirect-in-react-with-typescript/
 - https://www.geeksforgeeks.org/how-to-setup-reactjs-with-vite/
 - https://www.geeksforgeeks.org/8-ways-to-style-react-components/
 - https://blog.logrocket.com/how-to-use-typescript-react-tutorial-examples/
 - https://leandroaps.medium.com/building-a-modern-react-app-with-vite-vitest-typescript-eslint-prettier-and-husky-abc7a9876e9d
+- https://react.dev/learn/conditional-rendering
 
 React visuals:
 - https://medium.com/@msgold/creating-a-simple-client-side-data-grid-in-react-and-typescript-e631e14fb815
