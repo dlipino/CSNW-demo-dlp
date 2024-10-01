@@ -52,7 +52,7 @@ const BoggleMain = () => {
         <button
         className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
         onClick={handleSolve}>
-           Solve board
+           Solve board : {solvedWords.length}
         </button>
         
         <div className="h-screen flex items-center justify-center bg-gray-100">
@@ -62,7 +62,7 @@ const BoggleMain = () => {
         <span className="flex-grow block border-t border-black"></span>
         <span className="flex-none block mx-4 px-4 py-2.5 text-md rounded leading-none font-medium bg-black text-white">
         Available Words
-    </span>
+        </span>
         <span className="flex-grow block border-t border-black"></span>
     </h2>
     <div className="flex justify-center flex-wrap gap-2 p-4 max-w-sm mx-auto my-4 text-sm">

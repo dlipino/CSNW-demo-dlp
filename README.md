@@ -31,7 +31,7 @@ The UI will have the following buttons:
 - `Reset Board` -> Fills boggle board with new values.
 - `Load New Board` -> opens a file dialog to select a predefined boggle board and uses those values.A json file a sample file is provided /helperFiles/boggle/test2Darray.json
 - `Load Boggle Library:(library count)`-> opens a load file dialog for selecting and loading the library to use for solving the boggle board. A sample library file is provided at /helperFiles/boggle/testLibrary.
-- `Solve Board`-> Solves the boggle board that is visible and displays the results.
+- `Solve Board: (solved count)`-> Solves the boggle board that is visible and displays the results. Also shows number of solutions present.
 
 
 #### Running tests
