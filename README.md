@@ -7,57 +7,36 @@ The application runs as a React with no backing server and has limited interacti
 
 
 ## How to run
+#### Environment
+Running on a linux distro:
+- Ensure that Node is at v22.9.0. Using [nvm](https://github.com/nvm-sh/nvm) greatly simplifies that process
 
+#### Getting and running
 Source code can be retrieved from the open Github [repo](https://github.com/dlipino/CSNW-demo-dlp).
+
+- Get the source code and enter directory
 ```bash
 git clone git@github.com:dlipino/CSNW-demo-dlp.git
+cd CSNW-demo-dlp
 ```
-
-#### Environment Setup
-#### Run
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Load npm packages and run application in dev mode
+```bash
+npm install
+npm run dev
 ```
+The console will provide a link do ctrl+right-click on the link to open a browser to the url (http://localhost:5173/).
+On the welcome page click the 'Go to Boggle' button or add '/boggle' to the local url.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+The UI will have the following buttons:
+- `Reset Board` -> Fills boggle board with new values.
+- `Load New Board` -> opens a file dialog to select a predefined boggle board and uses those values.A json file a sample file is provided /helperFiles/boggle/test2Darray.json
+- `Load Boggle Library:(library count)`-> opens a load file dialog for selecting and loading the library to use for solving the boggle board. A sample library file is provided at /helperFiles/boggle/testLibrary.
+- `Solve Board`-> Solves the boggle board that is visible and displays the results.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+#### Running tests
+
+To run the tests:
+```bash
+npm run test
 ```
