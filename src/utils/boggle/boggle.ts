@@ -1,6 +1,6 @@
 import {LetterSelector} from './letterSelector';
 import {BoggleSolver} from './boggleSolver';
-import { WordMatcherUsingSets } from './wordmatcher';
+import { WordMatcherUsingSets } from './wordMatcher';
 
 class Boggle {
   private letterSelector = new LetterSelector()

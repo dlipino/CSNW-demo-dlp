@@ -16,12 +16,18 @@ export class WordMatcherUsingSets implements WordMatcher {
   private fullWords = new Set<string>();
   private deconstructedWords = new Set<string>();
 
+  public constructor(validWords? : string[]) {
+    if (validWords) {
+      this.loadValidWords(validWords)
+    }
+  }
+
   loadValidWords(validWords : string[]) {
     //TODO optimize storate runs
     this.fullWords = new Set(validWords)
 
     this.deconstructedWords.clear();
-    for(const word in validWords) {
+    for(const word of validWords) {
       //Store length -1 of word
       let partialWord = "";
       for (let i = 0; i < word.length -1; i++) {

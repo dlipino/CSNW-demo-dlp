@@ -1,4 +1,4 @@
-import {WordMatcher, StringStatus} from "./wordmatcher"
+import {WordMatcher, StringStatus} from "./wordMatcher"
 
 class SolvableBoggleTile {
   value: string;
@@ -14,7 +14,8 @@ class SolvableBoggleTile {
 
 export class BoggleSolver {
 
-  private boggleToSolve : SolvableBoggleTile[][];
+  //TODO make this visible/usable to only tests
+  readonly boggleToSolve : SolvableBoggleTile[][];
   private rowCount: number;
   private colCount: number;
   //TODO add coords for solution. Currently just keep count
@@ -73,7 +74,7 @@ export class BoggleSolver {
     const currentTile = this.boggleToSolve[row][column]
     // Tile has been visited, so it is illegal to check for a word
     if (visitedTiles[row][column]) return;
-
+    
     visitedTiles[row][column] = true;
     const word = previousStrings + currentTile.value;
     const wordStatus = this.wordMatcher.getWordStatusOfString(word)

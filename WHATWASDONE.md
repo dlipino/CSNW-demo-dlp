@@ -65,6 +65,10 @@ https://oida.dev/typescript-never-and-error-handling/
 https://www.shecodes.io/athena/8931-creating-a-string-with-variables-in-javascript
 https://howtodoinjava.com/typescript/sets/
 https://www.almabetter.com/bytes/tutorials/javascript/multidimensional-array-in-javascript
+https://dev.to/thinhda/unit-testing-in-nodejs-and-typescript-a-comprehensive-guide-with-jest-integration-2902
+https://runthatline.com/how-to-use-typescript-with-vitest/
+https://dev.to/danywalls/testing-private-methods-in-typescript-3np5
+https://www.tutorialsteacher.com/typescript/data-modifiers
 
 live help:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
