@@ -27,7 +27,7 @@ npm run dev
 The console will provide a link do ctrl+right-click on the link to open a browser to the url (http://localhost:5173/).
 On the welcome page click the 'Go to Boggle' button or add '/boggle' to the local url.
 
-The UI will have the following buttons:
+The UI will have the following buttons (so sorry about the off center and inconsistent UI):
 - `Reset Board` -> Fills boggle board with new values.
 - `Load New Board` -> opens a file dialog to select a predefined boggle board and uses those values.A json file a sample file is provided /helperFiles/boggle/test2Darray.json
 - `Load Boggle Library:(library count)`-> opens a load file dialog for selecting and loading the library to use for solving the boggle board. A sample library file is provided at /helperFiles/boggle/testLibrary.
