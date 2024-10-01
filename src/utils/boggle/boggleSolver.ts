@@ -51,7 +51,7 @@ export class BoggleSolver {
         }
       }
       for(let j = 0; j < boggleBoard[i].length; j++) {
-        tiles[i][j] = new SolvableBoggleTile(boggleBoard[i][j], i, j)
+        tiles[i][j] = new SolvableBoggleTile(boggleBoard[i][j].toLowerCase(), i, j)
       }
     }
     this.boggleToSolve = tiles;

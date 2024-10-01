@@ -4,8 +4,8 @@ import { WordMatcherUsingSets } from "./wordMatcher";
 const singleTile = [["a"]]
 const singleChecker = new WordMatcherUsingSets(["a", "an"]);
 
-const doubleTile = [["g", "o"], ["o","t"]]
-const doubleChecker = new WordMatcherUsingSets(["go","got","to"]);
+const doubleTile = [["g", "O"], ["o","t"]]
+const doubleChecker = new WordMatcherUsingSets(["GO","got","to"]);
 const tripleTile = [["g", "o", "z"], ["o","t", "y"], ["q","w", "y"]]
 
 const quadTile = [["g", "o", "s", "z"], ["o","t", "y", "e"],

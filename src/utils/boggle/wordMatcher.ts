@@ -23,11 +23,12 @@ export class WordMatcherUsingSets implements WordMatcher {
   }
 
   loadValidWords(validWords : string[]) {
+    const lowerCase = validWords.map(v => v.toLowerCase());
     //TODO optimize storate runs
-    this.fullWords = new Set(validWords)
+    this.fullWords = new Set(lowerCase)
 
     this.deconstructedWords.clear();
-    for(const word of validWords) {
+    for(const word of lowerCase) {
       //Store length -1 of word
       let partialWord = "";
       for (let i = 0; i < word.length -1; i++) {
