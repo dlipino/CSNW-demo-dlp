@@ -21,10 +21,11 @@ ran it
 
 searched for Fullstack React & Node.js + TypeScript to get all projects into one git repo
 Given a 4x4 matrix of letters chosen randomly from A-Z (with replacement, so a given letter may be used more than once), and a list L of english words (you can use any word list you’d like); write a program to output all the words present in the matrix per the rules of Boggle. Your program should be able to accept pre-set 4x4 matrices and word lists in a reasonable (text-based) format of your choosing. Rules of Boggle for your reference. 
+https://en.wikipedia.org/wiki/Boggle
 
-
-
-
+https://www.javatpoint.com/boggle-find-all-possible-words-in-a-board-of-characters
+https://www.algotree.org/algorithms/trie/trie_dfs_boggle/
+https://www.geeksforgeeks.org/boggle-find-possible-words-board-characters/
 https://kyleclapper.dev/boggle/
 https://github.com/ibnumusyaffa/node-ts-esm-starter-minimal
 https://leejjon.medium.com/sharing-code-between-frontend-and-backend-in-a-full-stack-typescript-app-1c8711c40304
@@ -52,11 +53,21 @@ https://medium.com/@aren.talb00/what-is-context-api-in-react-how-use-it-5360fc36
 https://plainenglish.io/blog/how-to-use-react-fc-children-prop-in-react-18-with-typescript-6ab7b2c901ce
 https://blog.logrocket.com/how-to-use-react-context-typescript/
 https://medium.com/@aren.talb00/creating-a-custom-file-input-using-react-and-useref-233f5d4abfc9
-https://dev.to/g33konaut/reading-local-files-with-javascript-25hn
-https://dev.to/yanhaijing/mastering-javascript-multiple-ways-to-generate-a-two-dimensional-array-cpg
 https://medium.com/@jijun.tang.data/parse-json-object-with-variables-in-typescript-211007293456 
 https://www.geeksforgeeks.org/how-to-reset-a-file-input-in-react-js/
 https://12daysofweb.dev/2023/filereader-api/
+
+ts help:
+https://dev.to/yanhaijing/mastering-javascript-multiple-ways-to-generate-a-two-dimensional-array-cpg
+https://dev.to/g33konaut/reading-local-files-with-javascript-25hn
+https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsText
+https://oida.dev/typescript-never-and-error-handling/
+https://www.shecodes.io/athena/8931-creating-a-string-with-variables-in-javascript
+https://howtodoinjava.com/typescript/sets/
+https://www.almabetter.com/bytes/tutorials/javascript/multidimensional-array-in-javascript
+
+live help:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
 
 boggle: two multiple paths same word
 
