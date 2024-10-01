@@ -1,13 +1,17 @@
 import { BoggleSolver } from "./boggleSolver";
-import { WordMatcherUsingSets, StringStatus } from "./wordMatcher";
+import { WordMatcherUsingSets } from "./wordMatcher";
 
-const emptyChecker = new WordMatcherUsingSets();
 const singleTile = [["a"]]
 const singleChecker = new WordMatcherUsingSets(["a", "an"]);
 
 const doubleTile = [["g", "o"], ["o","t"]]
 const doubleChecker = new WordMatcherUsingSets(["go","got","to"]);
 const tripleTile = [["g", "o", "z"], ["o","t", "y"], ["q","w", "y"]]
+
+const quadTile = [["g", "o", "s", "z"], ["o","t", "y", "e"],
+                  ["q","w", "y", "s"], ["p", "m", "a","t"]]
+
+const quadchecker = new WordMatcherUsingSets(["go","got","to", "yes","yam"]);
 
 describe("Boggle solver tests", () => {
   describe("1 x 1 boggle board", () => {
@@ -54,6 +58,24 @@ describe("Boggle solver tests", () => {
       expect(tripleSolve.getFullSolution()["go"]).toBe(2)
       expect(tripleSolve.getFullSolution()["got"]).toBe(2)
       expect(tripleSolve.getFullSolution()["to"]).toBe(2)
+    })
+  })
+  describe("4x4 boggle board", () => {
+    const quadSolve = new BoggleSolver(quadTile, quadchecker);
+    it("Has a valid board", () => {
+      expect(quadSolve.boggleToSolve.length).toEqual(4)
+      expect(quadSolve.boggleToSolve[0].length).toEqual(4)
+    })
+    it("Can be solved and has words", () => {
+      quadSolve.solveBoggleBoard()
+      expect(quadSolve.isBoggleSolved).toBeTruthy()
+      expect(quadSolve.getSolvedWords().length).toBe(5)
+
+      expect(quadSolve.getFullSolution()["go"]).toBe(2)
+      expect(quadSolve.getFullSolution()["got"]).toBe(2)
+      expect(quadSolve.getFullSolution()["to"]).toBe(2)
+      expect(quadSolve.getFullSolution()["yes"]).toBe(4)
+      expect(quadSolve.getFullSolution()["yam"]).toBe(1)
     })
   })
 
