@@ -72,6 +72,8 @@ React visuals:
 - https://medium.com/@msgold/creating-a-simple-client-side-data-grid-in-react-and-typescript-e631e14fb815
 - https://codesandbox.io/p/sandbox/typescript-react-canvas-hex-grid-f4yj5?file=%2Fsrc%2Fcomponents%2FCanvas%2Fdraw.utils.ts
 - https://medium.com/@ademyalcin27/building-a-stylish-tic-tac-toe-game-with-react-typescript-and-tailwind-css-f95cf06983e1
+- https://tailwindcss.com/docs/background-color
+- https://tailwindcss.com/docs/flex
 
 React context:
 - https://www.squash.io/passing-parameters-to-components-in-reactjs-with-typescript/

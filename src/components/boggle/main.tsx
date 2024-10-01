@@ -36,39 +36,43 @@ const BoggleMain = () => {
     return <button className="px-2 py-1 rounded bg-gray-200/50 text-gray-700 hover:bg-gray-300" key={value}>{value}</button>;
   };
 
-  return (   
-      <div>
-        <header >
-          <p>To </p>
-          <Link to="/">Home</Link>
-        </header>
-        <button
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
-          onClick={handleReset}>
-             Reset Board
-        </button>
-        <LoadTilesElement/>
-        <LoadLibrary/>
-        <button
-        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
-        onClick={handleSolve}>
-           Solve board : {solvedWords.length}
-        </button>
-        
-        <div className="h-screen flex items-center justify-center bg-gray-100">
+  return (
+    <div className='bg-gray-300 '>
+      <div className='flex justify-start px-2'>
+        <p>To <Link className='font-medium text-blue-600 dark:text-blue-500 hover:underline' to="/">Home</Link> </p>
+      </div>
+      <div className='flex'>
+        <div className = 'flex flex-col space-y-4 px-2 pt-2 border-2 border-stone-950'>
+          <button
+            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+            onClick={handleReset}>
+              Reset Board
+          </button>
+          <LoadTilesElement/>
+          <LoadLibrary/>
+          <button
+            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+            onClick={handleSolve}>
+              Solve board
+          </button>
+        </div>
+        <div className = 'flex-none'>
           <Board />
         </div>
-        <h2 className="flex flex-row flex-nowrap items-center mt-24">
-        <span className="flex-grow block border-t border-black"></span>
-        <span className="flex-none block mx-4 px-4 py-2.5 text-md rounded leading-none font-medium bg-black text-white">
-        Available Words
-        </span>
-        <span className="flex-grow block border-t border-black"></span>
-    </h2>
-    <div className="flex justify-center flex-wrap gap-2 p-4 max-w-sm mx-auto my-4 text-sm">
-       {solvedWords.map((value, _) => renderSolutionWord(value))}
-    </div>
+        <div className = 'grow border-2 border-b-stone-950 '>
+          <h2 className="flex flex-row flex-nowrap items-center">
+            <span className="flex-grow block border-t border-black"></span>
+            <span className="flex-none block mx-4 px-4 py-2.5 text-md rounded leading-none font-medium bg-black text-white">
+              Words on Board ({solvedWords.length})
+            </span>
+            <span className="flex-grow block border-t border-black"></span>
+          </h2>
+          <div className="flex justify-center flex-wrap gap-2 p-4 max-w-sm mx-auto my-4 text-sm">
+            {solvedWords.map((value, _) => renderSolutionWord(value))}
+          </div>
+        </div>
       </div>
+    </div>
   );
 }
 

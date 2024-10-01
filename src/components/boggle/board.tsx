@@ -11,7 +11,7 @@ const Board = () => {
   }, [letters]);
 
   const handleClick = (index: number) => {
-    console.log("Something should happen here")
+    console.log("Something should happen here", index)
   };
 
   const renderTile = (index: number) => {
@@ -19,9 +19,8 @@ const Board = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      {/* <div className="status mb-4 text-2xl">{status}</div> */}
-      <div className="grid grid-cols-4 gap-1 mb-4">
+    <div className="flex flex-col items-center bg-gray-500">
+      <div className="grid grid-cols-4 gap-2 mx-3 my-3">
         {flatTiles.map((_, index) => renderTile(index))}
       </div>
     </div>

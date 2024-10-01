@@ -37,7 +37,7 @@ export class BoggleSolver {
   }
 
   constructor (boggleBoard : string[][], wordChecker: WordMatcher) {
-    let tiles : SolvableBoggleTile[][] = [];
+    const tiles : SolvableBoggleTile[][] = [];
     this.rowCount = boggleBoard.length;
     this.colCount = -1
     for (let i = 0; i < boggleBoard.length; i++) {
