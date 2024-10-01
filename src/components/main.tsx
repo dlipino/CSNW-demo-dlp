@@ -24,9 +24,6 @@ function Main() {
       <h1>dlp samples</h1>
       <div>Using: Vite + React + Typescript</div>
       <div className="card">
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
         <button onClick={goToBoggle}> Go to Boggle</button>
       </div>
       <p className="read-the-docs">

@@ -1,7 +1,20 @@
-# React + TypeScript + Vite
+# CSNW Coding Sample: David Li Pino
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Typescript + Vite demo for the sample problems put forth for the interview.
 
+The boggle problem was selected for the assignment.
+The application runs as a React with no backing server and has limited interaction.
+
+
+## How to run
+
+Source code can be retrieved from the open Github [repo](https://github.com/dlipino/CSNW-demo-dlp).
+```bash
+git clone git@github.com:dlipino/CSNW-demo-dlp.git
+```
+
+#### Environment Setup
+#### Run
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh

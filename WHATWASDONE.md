@@ -77,6 +77,9 @@ https://vitest.dev/api/
 https://vitest.dev/config/#testtimeout
 https://vitest.dev/guide/debugging
 
+general:
+https://www.digitalocean.com/community/tutorials/how-to-push-an-existing-project-to-github
+
 live help:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
 

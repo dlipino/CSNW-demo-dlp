@@ -58,6 +58,13 @@ const BoggleMain = () => {
         <div className="h-screen flex items-center justify-center bg-gray-100">
           <Board />
         </div>
+        <h2 className="flex flex-row flex-nowrap items-center mt-24">
+        <span className="flex-grow block border-t border-black"></span>
+        <span className="flex-none block mx-4 px-4 py-2.5 text-md rounded leading-none font-medium bg-black text-white">
+        Available Words
+    </span>
+        <span className="flex-grow block border-t border-black"></span>
+    </h2>
     <div className="flex justify-center flex-wrap gap-2 p-4 max-w-sm mx-auto my-4 text-sm">
        {solvedWords.map((value, _) => renderSolutionWord(value))}
     </div>
