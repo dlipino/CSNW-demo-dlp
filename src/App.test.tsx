@@ -3,12 +3,12 @@ import App from "./App";
 
 describe("App tests", () => {
   it("should render the title", () => {
-    // render(<App />);
+    render(<App />);
 
-    // expect(
-    //   screen.getByRole("heading", {
-    //     level: 1,
-    //   })
-    // ).toHaveTextContent("dlp samples");
+    expect(
+      screen.getByRole("heading", {
+        level: 1,
+      })
+    ).toHaveTextContent("dlp samples");
   });
 });

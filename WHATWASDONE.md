@@ -58,6 +58,8 @@ https://medium.com/@aren.talb00/creating-a-custom-file-input-using-react-and-use
 https://medium.com/@jijun.tang.data/parse-json-object-with-variables-in-typescript-211007293456 
 https://www.geeksforgeeks.org/how-to-reset-a-file-input-in-react-js/
 https://12daysofweb.dev/2023/filereader-api/
+https://generate-random.org/word-generator?count=1000&type=lowercase
+https://www.linkedin.com/pulse/how-use-context-react-hooks-mike-cronin-rwace
 
 ts help:
 https://dev.to/yanhaijing/mastering-javascript-multiple-ways-to-generate-a-two-dimensional-array-cpg

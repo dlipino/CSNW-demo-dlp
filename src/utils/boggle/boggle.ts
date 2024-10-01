@@ -2,7 +2,7 @@ import {LetterSelector} from './letterSelector';
 import {BoggleSolver} from './boggleSolver';
 import { WordMatcherUsingSets } from './wordMatcher';
 
-class Boggle {
+export class Boggle {
   private letterSelector = new LetterSelector()
   private wordMatcher = new WordMatcherUsingSets();
   private boggleSolver!: BoggleSolver;

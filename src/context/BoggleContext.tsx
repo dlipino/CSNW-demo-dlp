@@ -1,34 +1,50 @@
-import React, { PropsWithChildren } from 'react';
-import { createContext, useContext, useState, ReactNode} from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 interface BoggleContextType {
-  letters: string[]; //Array of chars with length 4x4 or 0
-  solvedWords: string[] | null; //Array of all solutions
-  updateLetters: (letters: string[] | null) => void;
+  letters: (string | null )[][]; //Array of chars with length 4x4 or 0
+  solvedWords: string[]; //Array of all solutions
+  validWords: string[]
+  updateLetters: (letters: string[][]) => void;
   updateSolvedWords: (solvedWords: string[] | null) => void;
+  updateValidWords: (wordLibrary: string[]) => void;
 }
+
 const BoggleContext = createContext<BoggleContextType | null>(null);
 
 // const BoggleProvider: React.FC<PropsWithChildren> = ({ children }) => {
 const BoggleProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
-  const [letters, setLetters] = useState<string[]>(Array(16).fill(null));
-  const [solvedWords, setSolvedWords] = useState<string[] | null>(null);
+  const w = 4;
+  const h = 4;
+  const [letters, setLetters] = useState<(string|null)[][]>(Array.from({ length: w }, () => Array.from({ length: h }, () => null)));
+  const [solvedWords, setSolvedWords] = useState<string[]>([]);
+  const [validWords, setValidWords] = useState<string[]>([])
 
-
-  function updateLetters(letters: string[] | null) {
-    if (letters === null) {
-      setLetters(Array(16).fill(null))
-      return;
+  function updateLetters(inputTiles: string[][]) {
+    if (inputTiles.length !== h) {
+      throw new Error("New Tiles have incorrect row size");
     }
-    //TODO Check to verify correct size, for now assume it works
-    setLetters(letters)
+    for (let i = 0; i < inputTiles.length; i++) {
+      if (inputTiles[i].length !== w) {
+        throw new Error(`New Tiles have incorrect column size at row ${i}`);
+      }
+      //TODO check for correct letter type, probably
+    }
+    setLetters(inputTiles)
   }
 
   function updateSolvedWords(solvedWords: string[] | null) {
-    setSolvedWords(solvedWords)
+    if (solvedWords === null) {
+      setSolvedWords([])
+    } else {
+      setSolvedWords(solvedWords)
+    }
+  }
+  function updateValidWords(validWords: string[]) {
+    setValidWords(validWords)
   }
 
-  return <BoggleContext.Provider value={{ letters, solvedWords, updateLetters, updateSolvedWords}}>{children}</BoggleContext.Provider>;
+  return <BoggleContext.Provider value={
+    { letters, solvedWords, validWords, updateLetters, updateSolvedWords, updateValidWords}}>{children}</BoggleContext.Provider>;
 };
 
 function useBoggle() : BoggleContextType {
@@ -41,7 +57,6 @@ function useBoggle() : BoggleContextType {
 export { BoggleProvider, useBoggle, BoggleContext };
 
 // import React, { PropsWithChildren, useCallback, useContext, useState, createContext, ReactNode } from 'react';
-
 
 // interface TUser {
 //   name: string;

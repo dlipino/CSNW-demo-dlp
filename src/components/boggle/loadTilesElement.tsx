@@ -1,8 +1,7 @@
 import { ChangeEvent, useRef } from "react";
-
-
 import { useBoggle } from '../../context/BoggleContext';
-export function SimpleFileInput() {
+
+export function LoadTilesElement() {
   const { updateLetters } = useBoggle();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -10,45 +9,21 @@ export function SimpleFileInput() {
       //Expects json {"letters":[["a"x4],["b"x4], ["c"x4], ["d"x4]]}
       const lettersJson = JSON.parse(jsonInput)
       const arrayLetters = lettersJson["letters"]
-      // const arrayLetters = [['a','b','c','d'],['e','f','g', 'h'], ['i', 'j','k','l'],['m','n','o','p']]
-      const flat = arrayLetters.flat();
-      updateLetters(flat)
+      updateLetters(arrayLetters)
   }
-  const handleImageUploadClick = () => {
+  const handleButtonClick = () => {
     fileInputRef.current?.click();
   };
 
-
-  // function readFile() {
-  //   const fileReader = new FileReader();
-  //   const resultContainer = document.getElementById("result");
-  //   const file = document.querySelector("input[type=file]").files[0];
-  
-  //   if (file) {
-  //     fileReader.readAsText(file); // Read the file so fileReader.result is populated.
-  //   }
-  
-  //   fileReader.addEventListener(
-  //     "load",
-  //     () => {
-  //       resultContainer.textContent = fileReader.result;
-  //     },
-  //     { once: true }
-  //   );
-  // }
-  
   const loadLettersJson = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log("Starting the load")
     if (event.target.files && event.target.files[0]) {
       const file = event.target.files[0];
-      console.log("Trying to read", file)
       const reader = new FileReader();
 
       
       //TODO add error handling and messages for incorrect file format etc
       reader.onload = function fileReadCompleted() {
         // when the reader is done, the content is in reader.result.
-        console.log(reader.result);
         const result = reader.result as string;
         parseTextString(result)
       };
@@ -79,7 +54,11 @@ export function SimpleFileInput() {
           onChange={loadLettersJson}
           
         />
-        <button onClick={handleImageUploadClick}>Upload</button>
+        <button 
+          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+          onClick={handleButtonClick}>
+            Load new board
+        </button>
       </div>
     </div>
   );
