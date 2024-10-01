@@ -3,6 +3,8 @@ Preference Color Scheme
 settings, prefernce tab
 webbrowser ctrl+shift+c then click
 
+testing
+click on terminal drop down select Javascript Debug Terminal
 https://github.com/nvm-sh/nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 https://dev.to/this-is-learning/file-nesting-in-vs-code-46l5

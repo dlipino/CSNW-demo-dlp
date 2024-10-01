@@ -6,10 +6,11 @@ const singleTile = [["a"]]
 const singleChecker = new WordMatcherUsingSets(["a", "an"]);
 
 const doubleTile = [["g", "o"], ["o","t"]]
-const doubleChecker = new WordMatcherUsingSets(["go","got"]);
+const doubleChecker = new WordMatcherUsingSets(["go","got","to"]);
+const tripleTile = [["g", "o", "z"], ["o","t", "y"], ["q","w", "y"]]
 
 describe("Boggle solver tests", () => {
-  describe.skip("1 x 1 boggle board", () => {
+  describe("1 x 1 boggle board", () => {
     const singleSolve = new BoggleSolver(singleTile, singleChecker);
     it("Has a valid board", () => {
       expect(singleSolve.boggleToSolve.length).toEqual(1)
@@ -31,10 +32,28 @@ describe("Boggle solver tests", () => {
     it("Can be solved and has words", () => {
       doubleSolve.solveBoggleBoard()
       expect(doubleSolve.isBoggleSolved).toBeTruthy()
-      expect(doubleSolve.getSolvedWords().length).toBe(2)
+      expect(doubleSolve.getSolvedWords().length).toBe(3)
 
       expect(doubleSolve.getFullSolution()["go"]).toBe(2)
       expect(doubleSolve.getFullSolution()["got"]).toBe(2)
+      expect(doubleSolve.getFullSolution()["to"]).toBe(2)
+    })
+  })
+
+  describe("3x3 boggle board", () => {
+    const tripleSolve = new BoggleSolver(tripleTile, doubleChecker);
+    it("Has a valid board", () => {
+      expect(tripleSolve.boggleToSolve.length).toEqual(3)
+      expect(tripleSolve.boggleToSolve[0].length).toEqual(3)
+    })
+    it("Can be solved and has words", () => {
+      tripleSolve.solveBoggleBoard()
+      expect(tripleSolve.isBoggleSolved).toBeTruthy()
+      expect(tripleSolve.getSolvedWords().length).toBe(3)
+
+      expect(tripleSolve.getFullSolution()["go"]).toBe(2)
+      expect(tripleSolve.getFullSolution()["got"]).toBe(2)
+      expect(tripleSolve.getFullSolution()["to"]).toBe(2)
     })
   })
 

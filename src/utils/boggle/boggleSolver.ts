@@ -77,15 +77,10 @@ export class BoggleSolver {
 
   findWordForTile(row: number, column: number, previousStrings: string, visitedTiles: boolean[][]) {
     const currentTile = this.boggleToSolve[row][column]
-    // Tile has been visited, so it is illegal to check for a word
-    console.log("Finding word for tile", row, column, previousStrings)
-
-    if (visitedTiles[row][column]) return;
-    
+   
     visitedTiles[row][column] = true;
     const word = previousStrings + currentTile.value;
     const wordStatus = this.wordMatcher.getWordStatusOfString(word)
-    console.log("The word and status", word, wordStatus)
     switch(wordStatus) {
       case StringStatus.NotWord: {
         return;
@@ -105,16 +100,16 @@ export class BoggleSolver {
       }
     }
 
-    if(row == 0 && column == 0) {
-      console.log("Starting")
-    }
     // Find adjacent tiles, do some bounds checking to avoid resource wasting
     for(let i = row - 1; i <= row + 1 && i < this.rowCount; i++){
       if( i >= 0) {
         for(let j = column - 1; j <= column + 1 && j <this.colCount; j++){
-          if(j >= 0 ) {
+          if(j >= 0 && visitedTiles[i][j] == false) {
             this.findWordForTile(i,j,word, visitedTiles)
-          }          
+            //Done finding words for that tile, reset its visited status so other
+            //tiles can use it
+            visitedTiles[i][j] = false
+          }
         }
       }
     }
@@ -129,7 +124,6 @@ export class BoggleSolver {
       //Leave some sort of message
       return false;
     }
-    console.log("Finding")
     for(let i = 0; i < this.rowCount; i++) {
       for(let j = 0; j < this.colCount; j++) {
         const visited = Array.from(Array(this.rowCount), () => new Array(this.colCount).fill(false));
