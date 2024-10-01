@@ -28,7 +28,12 @@ export class BoggleSolver {
   }
 
   getSolvedWords(): string[] {
-    return Object.keys(this.boggleSolutions)
+    return Object.keys(this.boggleSolutions);
+  }
+
+  getFullSolution(): { [key: string]: number } {
+    //TODO ensure outsiders can't change this
+    return this.boggleSolutions;
   }
 
   constructor (boggleBoard : string[][], wordChecker: WordMatcher) {
@@ -57,7 +62,7 @@ export class BoggleSolver {
     if (wordToAdd in this.boggleSolutions){
       this.boggleSolutions[wordToAdd]+=1
     } else {
-      this.boggleSolutions[wordToAdd] == 1
+      this.boggleSolutions[wordToAdd] = 1
     }
   }
 /**
@@ -73,11 +78,14 @@ export class BoggleSolver {
   findWordForTile(row: number, column: number, previousStrings: string, visitedTiles: boolean[][]) {
     const currentTile = this.boggleToSolve[row][column]
     // Tile has been visited, so it is illegal to check for a word
+    console.log("Finding word for tile", row, column, previousStrings)
+
     if (visitedTiles[row][column]) return;
     
     visitedTiles[row][column] = true;
     const word = previousStrings + currentTile.value;
     const wordStatus = this.wordMatcher.getWordStatusOfString(word)
+    console.log("The word and status", word, wordStatus)
     switch(wordStatus) {
       case StringStatus.NotWord: {
         return;
@@ -96,10 +104,14 @@ export class BoggleSolver {
         break;
       }
     }
+
+    if(row == 0 && column == 0) {
+      console.log("Starting")
+    }
     // Find adjacent tiles, do some bounds checking to avoid resource wasting
-    for(let i = row - 1; i <= row + 1 && i < this.rowCount; row++){
+    for(let i = row - 1; i <= row + 1 && i < this.rowCount; i++){
       if( i >= 0) {
-        for(let j = column - 1; j <= column + 1 && j <this.colCount; column++){
+        for(let j = column - 1; j <= column + 1 && j <this.colCount; j++){
           if(j >= 0 ) {
             this.findWordForTile(i,j,word, visitedTiles)
           }          
@@ -117,6 +129,7 @@ export class BoggleSolver {
       //Leave some sort of message
       return false;
     }
+    console.log("Finding")
     for(let i = 0; i < this.rowCount; i++) {
       for(let j = 0; j < this.colCount; j++) {
         const visited = Array.from(Array(this.rowCount), () => new Array(this.colCount).fill(false));
@@ -124,6 +137,7 @@ export class BoggleSolver {
       }
     }
     this.solutionAttempted = true;
+
     return true
   }
 }

@@ -69,6 +69,9 @@ https://dev.to/thinhda/unit-testing-in-nodejs-and-typescript-a-comprehensive-gui
 https://runthatline.com/how-to-use-typescript-with-vitest/
 https://dev.to/danywalls/testing-private-methods-in-typescript-3np5
 https://www.tutorialsteacher.com/typescript/data-modifiers
+https://vitest.dev/api/
+https://vitest.dev/config/#testtimeout
+https://vitest.dev/guide/debugging
 
 live help:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
