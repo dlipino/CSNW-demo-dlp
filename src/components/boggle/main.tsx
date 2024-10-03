@@ -1,3 +1,7 @@
+import { useEffect } from 'react';
+import data from '../../assets/initialLibrary.json';
+
+
 import { Link } from 'react-router-dom';
 import Board from "./board";
 import { useBoggle } from '../../context/BoggleContext';
@@ -9,10 +13,14 @@ import { WordMatcherUsingSets } from '../../utils/boggle/wordMatcher';
 import "../../demo.css"
 
 const BoggleMain = () => {
-  const { updateLetters,validWords, letters, updateSolvedWords, solvedWords} = useBoggle();
+  const { updateLetters,validWords, letters, updateSolvedWords, updateValidWords, solvedWords} = useBoggle();
   const selector = new LetterSelector()
   const rowCount = 4;
   const columnCount = 4;
+  useEffect(() => {
+    console.log(data)
+    updateValidWords(data["words"])
+  }, []);
 
   const handleReset = () => {
     //Just to shorten the line
